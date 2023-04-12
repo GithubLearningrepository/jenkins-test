@@ -8,6 +8,8 @@ jobs:
   send-notification:
     runs-on: ubuntu-latest
     steps:
+      - name: Install showdown package
+        run: npm install showdown
       - name: Send email notification
         uses: dawidd6/action-send-mail@v3.4.0
         with:
