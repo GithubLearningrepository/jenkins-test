@@ -1,0 +1,20 @@
+name: Notify on Issue Creation
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  send-notification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send email notification
+        uses: dawidd6/action-send-mail@v3.4.0
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: anjali_manocha@fosteringlinux.com
+          password: My@family1
+          subject: 'New Issue Created'
+          to: anjali_manocha@fosteringlinux.com
+          body: 'A new issue has been created in your repository.'
