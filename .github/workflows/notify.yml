@@ -12,9 +12,6 @@ jobs:
         uses: actions/setup-node@v2.4.0
         with:
           node-version: '14'
-          
-      - name: Install showdown package
-        run: npm install showdown
         
       - name: Install showdown package
         env:
