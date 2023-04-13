@@ -16,9 +16,11 @@ jobs:
       - name: Install showdown package
         run: npm install showdown
         
-      - name: Add showdown to PATH
-        run: export PATH=$(npm bin):$PATH
-  
+      - name: Install showdown package
+        env:
+          PATH: ${{ github.workspace }}/node_modules/.bin:${{ env.PATH }}
+        run: npm install showdown
+        
       - name: Send email notification
         uses: dawidd6/action-send-mail@v3.4.0
         with:
