@@ -14,9 +14,11 @@ jobs:
           node-version: '14'
         
       - name: Install showdown package
-        env:
-          PATH: ${{ github.workspace }}/node_modules/.bin:${{ env.PATH }}
         run: npm install showdown
+        
+      - name: Set PATH environment variable
+        run: |
+          echo "PATH=\$PATH:/home/runner/work/_actions/_temp_7fb60ed8-612e-49ed-8494-a88f598e12f1/_staging/dawidd6-action-send-mail-a1ab281/node_modules/.bin" >> $GITHUB_ENV
         
       - name: Send email notification
         uses: dawidd6/action-send-mail@v3.4.0
