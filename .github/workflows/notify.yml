@@ -18,8 +18,8 @@ jobs:
       - name: Send email
         env:
           USER_EMAIL: anjali_manocha@fosteringlinux.com
-          RECIEVERS_MAIL1: pratyaksh_chauhan@fosteringlinux.com
-          RECIEVERS_MAIL: anurag_verma@fosteringlinux.com
+          RECIEVERS_MAIL1: latika.bhuttan@fosteringlinux.com 
+          RECIEVERS_MAIL: rajan.agarwal@fosteringlinux.com 
           USER_PASSWORD: My@family1
           ISSUE_TITLE:  ${{ github.event.issue.title }}
           ISSUE_DESC: ${{ github.event.issue.body }}
