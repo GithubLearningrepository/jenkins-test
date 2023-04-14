@@ -1,17 +1,32 @@
 import smtplib, ssl
 import os
 
+
+mail_list={
+'pratyakshchauhan':'pratyaksh_chauhan@fosteringlinux.com'
+'GithubLearningrepository':'karan.bhatt@fosteringlinux.com'
+}
+
+
 port = 465
 smtp_server = "smtp.gmail.com"
 USER_EMAIL = os.environ.get("USER_EMAIL")
 USER_PASSWORD = os.environ.get("USER_PASSWORD")
 ISSUE = os.environ.get("ISSUE_TITLE")
 RECIVERS_MAIL = os.environ.get("RECIEVERS_MAIL")
-RECIVERS_MAIL1 = os.environ.get("RECIEVERS_MAIL1")
+# RECIVERS_MAIL1 = os.environ.get("RECIEVERS_MAIL1")
 TEXT = os.environ.get("ISSUE_DESC")
-actor = os.environ.get("ISSUE_CREATOR")
 
-to_addr = [RECIVERS_MAIL, RECIVERS_MAIL1]
+
+to_address = [RECIVERS_MAIL]
+actor = os.environ.get("ISSUE_CREATOR")
+for i in mail_list:
+  if actor == i:
+    mailto = mail_list[i]
+    to_address.append(mailto)
+
+
+
 SUBJECT = "Issue: " + ISSUE
 
 body = "The following issue has been encountered: " + TEXT + " and has been assigned to " + actor +"."
