@@ -3,7 +3,7 @@ import os
 
 
 mail_list={
-'pratyakshchauhan':'pratyaksh_chauhan@fosteringlinux.com'
+'pratyakshchauhan':'pratyaksh_chauhan@fosteringlinux.com',
 'GithubLearningrepository':'karan.bhatt@fosteringlinux.com'
 }
 
