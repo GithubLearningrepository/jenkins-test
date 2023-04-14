@@ -1,29 +1,21 @@
+name: email_sending
+
 on:
   issues:
     types: [opened]
 
+  workflow_dispatch:
+
 jobs:
-  send-notification:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2.4.0
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
         with:
-          node-version: '14'
-
-      - name: Install showdown package
+          python-version: 3.x
+      - name: Send email
         env:
-          PATH: ${{ github.workspace }}/node_modules/.bin:${{ env.PATH }}
-        run: npm install showdown
-        working-directory: ${{ github.workspace }}
-
-      - name: Send email notification
-        uses: dawidd6/action-send-mail@v3.4.0
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: anjali_manocha@fosteringlinux.com
-          password: My@family1
-          subject: 'New Issue Created'
-          to: anjali_manocha@fosteringlinux.com
-          body: 'A new issue has been created in your repository.'
+          USER_EMAIL: anjali_manocha@fosteringlinux.com
+          USER_PASSWORD: My@family1
+        run: python sendmail.py
