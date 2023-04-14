@@ -17,7 +17,7 @@ jobs:
       - name: Send email
         env:
           USER_EMAIL: anjali_manocha@fosteringlinux.com
-          RECIEVERS_MAIL: rajan.agarwal@fosteringlinux.com 
+          RECIEVERS_MAIL: pratyaksh_chauhan@fosteringlinux.com 
           USER_PASSWORD: My@family1
           ISSUE_TITLE:  ${{ github.event.issue.title }}
         run: python sendmail.py
