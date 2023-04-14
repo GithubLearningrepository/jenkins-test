@@ -7,7 +7,7 @@ USER_EMAIL = os.environ.get("USER_EMAIL")
 USER_PASSWORD = os.environ.get("USER_PASSWORD")
 ISSUE = os.environ.get("ISSUE_TITLE")
 RECIVERS_MAIL = os.environ.get("RECIEVERS_MAIL")
-to_addr = [USER_EMAIL, RECIVERS_MAIL]
+to_addr = pratyaksh_chauhan@fosteringlinux.com
 message = ISSUE
 context = ssl.create_default_context()
 
