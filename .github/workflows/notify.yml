@@ -15,6 +15,7 @@ jobs:
         env:
           PATH: ${{ github.workspace }}/node_modules/.bin:${{ env.PATH }}
         run: npm install showdown
+        working-directory: ${{ github.workspace }}
 
       - name: Send email notification
         uses: dawidd6/action-send-mail@v3.4.0
