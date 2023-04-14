@@ -18,4 +18,5 @@ jobs:
         env:
           USER_EMAIL: anjali_manocha@fosteringlinux.com
           USER_PASSWORD: My@family1
+          ISSUE_TITLE:  ${{ github.event.issue.title }}
         run: python sendmail.py
