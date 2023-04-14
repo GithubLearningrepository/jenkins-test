@@ -8,11 +8,12 @@ USER_PASSWORD = os.environ.get("USER_PASSWORD")
 ISSUE = os.environ.get("ISSUE_TITLE")
 RECIVERS_MAIL = os.environ.get("RECIEVERS_MAIL")
 RECIVERS_MAIL1 = os.environ.get("RECIEVERS_MAIL1")
-
-to_addr = [RECIVERS_MAIL, RECIVERS_MAIL1]
-SUBJECT = ISSUE
 TEXT = os.environ.get("ISSUE_DESC")
 actor = os.environ.get("ISSUE_CREATOR")
+
+to_addr = [RECIVERS_MAIL, RECIVERS_MAIL1]
+SUBJECT = "Issue:" + ISSUE
+
 # ab = TEXT+" " +actor
 message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
 context = ssl.create_default_context()
