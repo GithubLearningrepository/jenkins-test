@@ -9,7 +9,10 @@ ISSUE = os.environ.get("ISSUE_TITLE")
 RECIVERS_MAIL = os.environ.get("RECIEVERS_MAIL")
 RECIVERS_MAIL1 = os.environ.get("RECIEVERS_MAIL1")
 to_addr = [RECIVERS_MAIL, RECIVERS_MAIL1]
-message = ISSUE
+SUBJECT = ISSUE
+TEXT = "Message body"
+ 
+message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
 context = ssl.create_default_context()
 
 server = smtplib.SMTP_SSL(smtp_server, port, context=context)
