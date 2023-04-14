@@ -14,7 +14,6 @@ USER_EMAIL = os.environ.get("USER_EMAIL")
 USER_PASSWORD = os.environ.get("USER_PASSWORD")
 ISSUE = os.environ.get("ISSUE_TITLE")
 RECIVERS_MAIL = os.environ.get("RECIEVERS_MAIL")
-RECIVERS_MAIL1 = os.environ.get("RECIEVERS_MAIL1")
 TEXT = os.environ.get("ISSUE_DESC")
 
 
