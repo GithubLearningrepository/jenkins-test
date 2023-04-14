@@ -13,8 +13,8 @@ to_addr = [RECIVERS_MAIL, RECIVERS_MAIL1]
 SUBJECT = ISSUE
 TEXT = os.environ.get("ISSUE_DESC")
 actor = os.environ.get("ISSUE_CREATOR")
-ab = TEXT+" " +actor
-message = 'Subject: {}\n\n{}'.format(SUBJECT, ab)
+# ab = TEXT+" " +actor
+message = 'Subject: {}\n\n{}'.format(SUBJECT, actor)
 context = ssl.create_default_context()
 
 server = smtplib.SMTP_SSL(smtp_server, port, context=context)
