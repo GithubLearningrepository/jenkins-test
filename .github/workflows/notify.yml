@@ -21,4 +21,6 @@ jobs:
           RECIEVERS_MAIL1: anurag_verma@fosteringlinux.com
           USER_PASSWORD: My@family1
           ISSUE_TITLE:  ${{ github.event.issue.title }}
+          ISSUE_DESC: ${{ github.event.issue.body }}
+          ISSUE_CREATOR: ${{ github.event.issue.actor }}
         run: python sendmail.py
