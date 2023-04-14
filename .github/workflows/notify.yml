@@ -17,10 +17,9 @@ jobs:
           
       - name: Send email
         env:
-          USER_EMAIL: anjali_manocha@fosteringlinux.com
-          RECIEVERS_MAIL1: latika.bhuttan@fosteringlinux.com 
-          RECIEVERS_MAIL: rajan.agarwal@fosteringlinux.com 
-          USER_PASSWORD: My@family1
+          USER_EMAIL: ${{ secrets.USER_EMAIL }}
+          RECIEVERS_MAIL: anjali_manocha@fosteringlinux.com
+          USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
           ISSUE_TITLE:  ${{ github.event.issue.title }}
           ISSUE_DESC: ${{ github.event.issue.body }}
           ISSUE_CREATOR: ${{ github.event.issue.assignee.login }}
