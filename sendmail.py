@@ -12,13 +12,13 @@ TEXT = os.environ.get("ISSUE_DESC")
 actor = os.environ.get("ISSUE_CREATOR")
 
 to_addr = [RECIVERS_MAIL, RECIVERS_MAIL1]
-SUBJECT = "Issue:" + ISSUE
+SUBJECT = "Issue: " + ISSUE
 
-# ab = TEXT+" " +actor
-message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
+body = "The following issue has been encountered: " + TEXT + " and has been assigned to " + actor +"."
+message = 'Subject: {}\n\n{}'.format(SUBJECT, body)
 context = ssl.create_default_context()
 
 server = smtplib.SMTP_SSL(smtp_server, port, context=context)
 
 server.login(USER_EMAIL, USER_PASSWORD)
-server.sendmail(to_addr, to_addr, message)
+server.sendmail(USER_EMAIL, to_addr, message)
