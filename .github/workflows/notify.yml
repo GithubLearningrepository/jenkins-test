@@ -5,20 +5,17 @@ on:
 jobs:
   send-notification:
     runs-on: ubuntu-latest
-    env:
-      SHOWDOWN_BIN: "./node_modules/.bin/showdown"
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.4.0
         with:
           node-version: '14'
-          
+
       - name: Install showdown package
+        env:
+          PATH: ${{ github.workspace }}/node_modules/.bin:${{ env.PATH }}
         run: npm install showdown
-        
+
       - name: Send email notification
         uses: dawidd6/action-send-mail@v3.4.0
         with:
@@ -29,6 +26,3 @@ jobs:
           subject: 'New Issue Created'
           to: anjali_manocha@fosteringlinux.com
           body: 'A new issue has been created in your repository.'
-        env:
-          SHOWDOWN_BIN: ${{ env.SHOWDOWN_BIN }}
-          PATH: ${{ env.SHOWDOWN_BIN }}:$PATH
