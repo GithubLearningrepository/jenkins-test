@@ -17,7 +17,7 @@ RECIVERS_MAIL = os.environ.get("RECIEVERS_MAIL")
 TEXT = os.environ.get("ISSUE_DESC")
 
 
-to_address = [RECIVERS_MAIL]
+to_address = []
 actor = os.environ.get("ISSUE_CREATOR")
 for i in mail_list:
   if actor == i:
