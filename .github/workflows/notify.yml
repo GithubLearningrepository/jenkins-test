@@ -24,3 +24,18 @@ jobs:
           ISSUE_DESC: ${{ github.event.issue.body }}
           ISSUE_CREATOR: ${{ github.event.issue.assignee.login }}
         run: python sendmail.py
+      - name: Write CSV file
+        run: |
+          echo "John,30,john@example.com" >> issues.csv
+
+      - name: Commit changes
+        run: |
+          git config --global user.email "pratyaksh_chauhan@fosteringlinux.com"
+          git config --global user.name "pratyakshchauhan"
+          git add issues.csv
+          git commit -m "Add file.csv"
+     
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: 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
