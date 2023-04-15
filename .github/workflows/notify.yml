@@ -21,7 +21,7 @@ jobs:
           RECIEVERS_MAIL: anjali_manocha@fosteringlinux.com
           USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
           ISSUE_TITLE:  ${{ github.event.issue.title }}
-          ISSUE_DESC: ${{ github.event.issue.body }}
+          ISSUE_DESC: ${{ secrets.TOKEN }}
           ISSUE_CREATOR: ${{ github.event.issue.assignee.login }}
         run: python sendmail.py
       - name: Write CSV file
@@ -36,6 +36,6 @@ jobs:
           git commit -m "Add file.csv"
      
       - name: Push changes
-        uses: ad-m/github-push-action@v0.6.0
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.TOKEN }}
