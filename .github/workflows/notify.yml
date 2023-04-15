@@ -34,8 +34,9 @@ jobs:
           git config --global user.name "pratyakshchauhan"
           git add issues.csv
           git commit -m "Add file.csv"
+          git push origin main
      
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
-          github_token: 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
+          github_token: ${{ secrets.TOKEN }}
