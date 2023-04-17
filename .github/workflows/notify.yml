@@ -26,7 +26,7 @@ jobs:
         run: python sendmail.py
       - name: Write CSV file
         run: |
-          echo "${{ github.event.issue.title }},${{ github.event.issue.body }},${{ github.event.issue.assignee.login }}" >> issues.csv
+          echo "${{ github.event.issue.title }},${{ github.event.issue.body }},${{ github.event.issue.assignee.login }},${{ github.event.issue.labels }}" >> issues.csv
 
       - name: Commit changes
         run: |
