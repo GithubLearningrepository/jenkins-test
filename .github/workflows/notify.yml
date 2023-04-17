@@ -26,7 +26,7 @@ jobs:
         run: python sendmail.py
       - name: Write CSV file
         run: |
-          echo "ISSUE_TITLE,ISSUE_CREATOR,ISSUE_DESC" >> issues.csv
+          echo "$ISSUE_TITLE,$ISSUE_CREATOR,$ISSUE_DESC" >> issues.csv
 
       - name: Commit changes
         run: |
