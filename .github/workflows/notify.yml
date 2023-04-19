@@ -26,7 +26,8 @@ jobs:
         run: python sendmail.py
       - name: Write CSV file
         run: |
-          echo "${{ github.event.issue.title }},${{ github.event.issue.body }},${{ github.event.issue.assignee.login }},${{ github.event.issue.labels }}, ${{ github.event.issue.number }}, ${{ steps.milestone.outputs.milestone }}, $(date)" >> issues.csv
+          labels = ${{ github.event.issue.labels }}
+          echo "${{ github.event.issue.title }},${{ github.event.issue.body }},${{ github.event.issue.assignee.login }},${labels[0]}, ${{ github.event.issue.number }}, ${{ github.event.issue.milestone.title }}, $(date)" >> issues.csv
 
       - name: Commit changes
         run: |
