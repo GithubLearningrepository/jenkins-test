@@ -1,10 +1,2 @@
-Issue,Issue Description,Assignee
-John,30,john@example.com
-John,30,john@example.com
-ISSUE_TITLE,ISSUE_CREATOR,ISSUE_DESC
-,,
-abc test,test,pratyakshchauhan
-abc,bug,pratyakshchauhan,Array
-tryone,description,pratyakshchauhan,Array, 66, , Wed Apr 19 06:35:10 UTC 2023
-abc,abc,pratyakshchauhan,Array, 67, , Wed Apr 19 06:58:44 UTC 2023
+IssueNo.,IssueName,Issue Description,Assignee,Label,Milestone,Date 
 qwerty,abc,pratyakshchauhan,Testing, 72, Cypress 09-05-2023, Wed Apr 19 08:25:38 UTC 2023
