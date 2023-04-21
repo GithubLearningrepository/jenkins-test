@@ -24,7 +24,7 @@ for i in mail_list:
     mailto = mail_list[i]
     to_address.append(mailto)
 
-
+print (to_address)
 
 SUBJECT = "Issue: " + ISSUE
 
