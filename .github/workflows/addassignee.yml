@@ -2,7 +2,7 @@ name: email_sending
 
 on:
   issues:
-    types: [assigned]
+    types: [edited]
 
   workflow_dispatch:
 
