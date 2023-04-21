@@ -1,0 +1,13 @@
+name: Issue Comment Notification
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Comment Body
+        run: echo "${{ github.event.comment.body }}" # prints the comment body to the console
+      
+      # add additional steps here to perform any desired actions based on the new comment
