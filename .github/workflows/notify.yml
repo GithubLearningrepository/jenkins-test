@@ -32,7 +32,7 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --global user.email "anurag_verma@fosteringlinux.com"
+          git config --global user.email "pratyaksh_chauhan@fosteringlinux.com"
           git config --global user.name "pratyakshchauhan"
           git add issues.csv
           git commit -m "Add file.csv"
