@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
-          
+      
       - name: Send email
         env:
           USER_EMAIL: ${{ secrets.USER_EMAIL }}
@@ -25,10 +25,10 @@ jobs:
           ISSUE_CREATOR: ${{ github.event.issue.assignee.login }}
         run: python sendmail.py
       - name: Write CSV file
-          comment= "Opened"
+          
         run: |
           
-          echo "${{ github.event.issue.number }},${{ github.event.issue.title }},${{ github.event.issue.body }},${{ github.event.issue.assignee.login }},${{ github.event.issue.labels[0].name}}, ${{ github.event.issue.milestone.title }}, $(date), "$COMMENT" >> issues.csv
+          echo "${{ github.event.issue.number }},${{ github.event.issue.title }},${{ github.event.issue.body }},${{ github.event.issue.assignee.login }},${{ github.event.issue.labels[0].name}}, ${{ github.event.issue.milestone.title }}, $(date) >> issues.csv
 
       - name: Commit changes
         run: |
