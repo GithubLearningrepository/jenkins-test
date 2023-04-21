@@ -1,13 +1,18 @@
-name: Issue Comment Notification
+name: Issue Comment
+
 on:
-  issues:
-    types: [opened, edited]
+  issue_comment:
+    types: [created]
 
 jobs:
-  notify:
+  issue_comment:
     runs-on: ubuntu-latest
     steps:
-      - name: Get Comment Body
-        run: echo "${{ github.event.comment.body }}" # prints the comment body to the console
-      
-      # add additional steps here to perform any desired actions based on the new comment
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run script
+      run: |
+        # Your script here
+        # You can use ${{ github.event.comment.body }} to access the comment body
+        # You can use ${{ github.event.issue.number }} to access the issue number
