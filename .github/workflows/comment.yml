@@ -14,5 +14,5 @@ jobs:
     - name: Run script
       run: |
         # Your script here
-        # You can use ${{ github.event.comment.body }} to access the comment body
-        # You can use ${{ github.event.issue.number }} to access the issue number
+        echo ${{ github.event.comment.body }}
+        echo ${{ github.event.issue.number }}
