@@ -16,3 +16,18 @@ jobs:
         # Your script here
         echo ${{ github.event.comment.body }}
         echo ${{ github.event.issue.number }}
+        
+    - name: Write CSV file  
+      run: |
+          echo "${{ github.event.issue.number }},${{ github.event.issue.title }},${{ github.event.issue.body }},${{ github.event.issue.assignee.login }},${{ github.event.issue.labels[0].name}}, ${{ github.event.issue.milestone.title }}, $(date)" , ${{ github.event.comment.body }}>> issues.csv
+    - name: Commit changes
+      run: |
+          git config --global user.email "anurag_verma@fosteringlinux.com"
+          git config --global user.name "pratyakshchauhan"
+          git add issues.csv
+          git commit -m "Add file.csv"
+     
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+          github_token: ${{ secrets.TOKEN }}
