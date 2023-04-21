@@ -1,10 +1,2 @@
-IssueNo.,IssueName,Issue Description,Assignee,Label,Milestone,Date, Remarks
-qwerty,abc,pratyakshchauhan,Testing, 72, Cypress 09-05-2023, Wed Apr 19 08:25:38 UTC 2023, 
-73,Institute loading delay,Slow response from LDAP,pratyakshchauhan,Testing, Cypress 09-05-2023, Wed Apr 19 09:00:53 UTC 2023, 
-79,blank assignee,y7qwdoi,,Testing, Cypress 09-05-2023, Fri Apr 21 06:33:24 UTC 2023, 
-80,comment handling,abc,pratyakshchauhan,Testing, Cypress 09-05-2023, Fri Apr 21 06:43:49 UTC 2023, 
-80,comment handling,abc,pratyakshchauhan,Testing, Cypress 09-05-2023, Fri Apr 21 06:45:19 UTC 2023 , adding comment
-81,two assignee,one two,pratyakshchauhan,Testing, Cypress 09-05-2023, Fri Apr 21 06:56:56 UTC 2023, 
-82,two assignee two,opjk,GithubLearningrepository,Testing, Cypress 09-05-2023, Fri Apr 21 06:58:14 UTC 2023, 
-82,two assignee two,opjk,pratyakshchauhan,Testing, Cypress 09-05-2023, Fri Apr 21 08:15:57 UTC 2023, 
-82,two assignee two,opjk,pratyakshchauhan,Testing, Cypress 09-05-2023, Fri Apr 21 10:31:21 UTC 2023, 
+IssueNo.,IssueName,Issue Description,Assignee,Label,Milestone,Date, Remarks, Status
+
