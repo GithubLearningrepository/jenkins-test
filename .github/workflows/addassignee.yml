@@ -28,15 +28,13 @@ jobs:
       - name: Check if issue exists
         id: check_issue
         run: |
-          issue_number=${{ github.event.issue.number }}
-          response=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/GithubLearningrepository/jenkins-test/issues/${{ github.event.issue.number }})
-          if echo "$response" | jq -e . >/dev/null; then
-            echo "${{ github.event.issue.number }},${{ github.event.issue.title }},${{ github.event.issue.body }},${{ github.event.issue.assignee.login }},${{ github.event.issue.labels[0].name}}, ${{ github.event.issue.milestone.title }}, $(date), ${{ github.event.comment.body }},"Opened" " >> issues.csv
-
+          if [ "${{ github.event.action }}" = "opened" ]; then
+            echo "Issue was just opened, not assigned"
+            exit 1
           else
-            echo "Issue first time created"
+            echo "${{ github.event.issue.number }},${{ github.event.issue.title }},${{ github.event.issue.body }},${{ github.event.issue.assignee.login }},${{ github.event.issue.labels[0].name}}, ${{ github.event.issue.milestone.title }}, $(date), ${{ github.event.comment.body }},"Opened" " >> issues.csv
           fi
-          
+        
       - name: Commit changes
         run: |
           git config --global user.email "pratyaksh_chauhan@fosteringlinux.com"
