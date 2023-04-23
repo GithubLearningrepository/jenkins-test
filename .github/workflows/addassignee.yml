@@ -25,15 +25,11 @@ jobs:
           ISSUE_CREATOR: ${{ github.event.issue.assignee.login }}
         run: python sendmail.py
         
-      - name: Check if issue exists
-        id: check_issue
+      - name: Write CSV
         run: |
-          if [ "${{ github.event.action }}" = "opened" ]; then
-            echo "Issue was just opened, not assigned"
-            exit 1
-          else
-            echo "${{ github.event.issue.number }},${{ github.event.issue.title }},${{ github.event.issue.body }},${{ github.event.issue.assignee.login }},${{ github.event.issue.labels[0].name}}, ${{ github.event.issue.milestone.title }}, $(date), ${{ github.event.comment.body }},"Opened" " >> issues.csv
-          fi
+          sleep 15
+          echo "${{ github.event.issue.number }},${{ github.event.issue.title }},${{ github.event.issue.body }},${{ github.event.issue.assignee.login }},${{ github.event.issue.labels[0].name}}, ${{ github.event.issue.milestone.title }}, $(date), ${{ github.event.comment.body }},"Opened" " >> issues.csv
+    
         
       - name: Commit changes
         run: |
