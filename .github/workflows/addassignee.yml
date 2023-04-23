@@ -24,12 +24,19 @@ jobs:
           ISSUE_DESC: ${{ github.event.issue.body }}
           ISSUE_CREATOR: ${{ github.event.issue.assignee.login }}
         run: python sendmail.py
-      - name: Write CSV file
-          
+        
+      - name: Check if issue exists
+        id: check_issue
         run: |
-          
-          echo "${{ github.event.issue.number }},${{ github.event.issue.title }},${{ github.event.issue.body }},${{ github.event.issue.assignee.login }},${{ github.event.issue.labels[0].name}}, ${{ github.event.issue.milestone.title }}, $(date), ${{ github.event.comment.body }},"Opened" " >> issues.csv
+          issue_number=${{ github.event.issue.number }}
+          response=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/GithubLearningrepository/jenkins-test/issues/${{ github.event.issue.number }})
+          if echo "$response" | jq -e . >/dev/null; then
+            echo "${{ github.event.issue.number }},${{ github.event.issue.title }},${{ github.event.issue.body }},${{ github.event.issue.assignee.login }},${{ github.event.issue.labels[0].name}}, ${{ github.event.issue.milestone.title }}, $(date), ${{ github.event.comment.body }},"Opened" " >> issues.csv
 
+          else
+            echo "Issue first time created"
+          fi
+          
       - name: Commit changes
         run: |
           git config --global user.email "pratyaksh_chauhan@fosteringlinux.com"
