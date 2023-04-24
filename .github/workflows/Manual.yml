@@ -18,10 +18,10 @@ jobs:
       with:
         server_address: smtp.gmail.com
         server_port: 587
-        username: 'pratyaksh_chauhan@fosteringlinux.com'
-        password: 'Pratyaksh@13'
+        username: 
+        password: 
         subject: Your file from the repository
         body: Here is your file from the repository
-        from: pratyaksh_chauhan@fosteringlinux.com
+        from: 
         to: pratyaksh_chauhan@fosteringlinux.com
         attachments: ./issues.csv 
