@@ -18,8 +18,8 @@ jobs:
       with:
         server_address: smtp.gmail.com
         server_port: 587
-        username: pratyaksh_chauhan@fosteringlinux.com
-        password: Pratyaksh@13
+        username: 'pratyaksh_chauhan@fosteringlinux.com'
+        password: 'Pratyaksh@13'
         subject: Your file from the repository
         body: Here is your file from the repository
         from: pratyaksh_chauhan@fosteringlinux.com
