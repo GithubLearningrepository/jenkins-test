@@ -1,0 +1,21 @@
+name: Send File
+on:
+  schedule:
+    - cron: '26 12 * * *' # change the cron syntax to match your desired schedule
+jobs:
+  send_file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Send email with attachment
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 587
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: Your file from the repository
+        body: Here is your file from the repository
+        to: pratyaksh_chauhan@fosteringlinux.com
+        attachment: ./issue.csv
