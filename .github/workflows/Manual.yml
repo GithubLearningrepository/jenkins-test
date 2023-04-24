@@ -24,4 +24,4 @@ jobs:
         body: Here is your file from the repository
         from: pratyaksh_chauhan@fosteringlinux.com
         to: pratyaksh_chauhan@fosteringlinux.com
-        attachments: ./issue.csv 
+        attachments: ./issues.csv 
