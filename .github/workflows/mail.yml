@@ -1,7 +1,7 @@
 name: Send File
 on:
   schedule:
-    - cron: '26 12 * * *' # change the cron syntax to match your desired schedule
+    - cron: '58 06 * * *' # change the cron syntax to match your desired schedule
 jobs:
   send_file:
     runs-on: ubuntu-latest
