@@ -23,5 +23,5 @@ jobs:
         subject: Your file from the repository
         body: Here is your file from the repository
         from: pratyaksh_chauhan@fosteringlinux.com
-        to: example@example.com
+        to: pratyaksh_chauhan@fosteringlinux.com
         attachments: ./issue.csv 
