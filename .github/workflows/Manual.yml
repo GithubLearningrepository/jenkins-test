@@ -30,11 +30,16 @@ jobs:
       run: |
           
           cat issues.csv >> MonthlyIssues.csv
+    
+    - name: Rewrite CSV file
+      run: |
+          echo ""Issue No.","Issue Name","Description","Assignee","Label","Milestone","Day","Date","Comment","Status"" > issues.csv
+                
     - name: Commit changes
       run: |
           git config --global user.email "pratyaksh_chauhan@fosteringlinux.com"
           git config --global user.name "pratyakshchauhan"
-          git add issues.csv
+          git add .
           git commit -m "Add file.csv"
      
     - name: Push changes
@@ -42,8 +47,4 @@ jobs:
       with:
           github_token: ${{ secrets.TOKEN }}      
           
-          
-    - name: Rewrite CSV file
-      run: |
-          echo ""Issue No.","Issue Name","Description","Assignee","Label","Milestone","Day","Date","Comment","Status"" > issues.csv
-                
+                      
