@@ -23,4 +23,4 @@ jobs:
         subject: Your file from the repository
         body: Here is your file from the repository
         to: example@example.com
-        attachment: ./issue.csv 
+        attachments: ./issue.csv 
