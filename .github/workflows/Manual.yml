@@ -25,3 +25,25 @@ jobs:
         from: ${{ secrets.USER_EMAIL }}
         to: pratyaksh_chauhan@fosteringlinux.com
         attachments: ./issues.csv 
+    - name: Write Monthly CSV file
+          
+      run: |
+          
+          cat issues.csv >> MonthlyIssues.csv
+    - name: Commit changes
+      run: |
+          git config --global user.email "pratyaksh_chauhan@fosteringlinux.com"
+          git config --global user.name "pratyakshchauhan"
+          git add issues.csv
+          git commit -m "Add file.csv"
+     
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+          github_token: ${{ secrets.TOKEN }}      
+          
+          
+    - name: Rewrite CSV file
+      run: |
+          echo ""Issue No.","Issue Name","Description","Assignee","Label","Milestone","Day","Date","Comment","Status"" > issues.csv
+                
