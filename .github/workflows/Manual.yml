@@ -22,5 +22,6 @@ jobs:
         password: ${{ secrets.EMAIL_PASSWORD }}
         subject: Your file from the repository
         body: Here is your file from the repository
+        from: ${{ secrets.EMAIL_USERNAME }}
         to: example@example.com
         attachments: ./issue.csv 
