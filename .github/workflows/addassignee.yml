@@ -28,7 +28,7 @@ jobs:
       - name: Write CSV
         run: |
           sleep 15
-          echo "${{ github.event.issue.number }},${{ github.event.issue.title }},${{ github.event.issue.body }},${{ github.event.issue.assignee.login }},${{ github.event.issue.labels[0].name}}, ${{ github.event.issue.milestone.title }}, $(TZ='Asia/Kolkata' date +"%A, %d %B %Y %T %Z"), ${{ github.event.comment.body }},"In Progress" " >> issues.csv
+          echo "${{ github.event.issue.number }},${{ github.event.issue.title }},${{ github.event.issue.body }},${{ github.event.issue.assignee.login }},${{ github.event.issue.labels[0].name}}, ${{ github.event.issue.milestone.title }}, $(TZ='Asia/Kolkata' date +"%A, %d %B %Y %T %Z"), ${{ github.event.comment.body }},"Assignee Change" " >> issues.csv
     
         
       - name: Commit changes
