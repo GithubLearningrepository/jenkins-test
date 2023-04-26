@@ -35,6 +35,7 @@ jobs:
           git config --global user.name "pratyakshchauhan"
           git add issues.csv
           git commit -m "Add file.csv"
+          git pull
      
       - name: Push changes
         uses: ad-m/github-push-action@master
